@@ -1,0 +1,35 @@
+function submitForm(){
+    var nombre = $("#fname").val();
+    var apellido = $("#lname").val();
+    var f_nacimiento = $("#bdate").val();
+    var genero = $("#gen").val();
+    var valoracion = $("#valoracion").val();
+
+    if (nombre == "") {
+        $("<div title='Alerta'>El campo Nombre no puede estar vacio</div>").dialog();
+        return false;
+      }
+      if (!(/^[a-zA-Z]+$/.test(nombre))){
+        $("<div title='Alerta'>El campo Nombre no puede contener numeros o caracteres especiales</div>").dialog();
+        return false;
+      }
+      if (apellido == "") {
+          $("<div title='Alerta'>El campo Apellido no puede estar vacio</div>").dialog();
+          return false;
+        }
+      if (!(/^[a-zA-Z]+$/.test(apellido))) {
+          $("<div title='Alerta'>El campo Apellido no puede contener numeros o caracteres especiales</div>").dialog();
+          return false;
+      }
+      if (f_nacimiento == "") {
+          $("<div title='Alerta'>El campo Fecha de nacimiento no puede estar vacio</div>").dialog();
+          return false;
+      }
+      if (genero == "") {
+          $("<div title='Alerta'>'El campo Genero no puede estar vacio'</div>").dialog();
+          return false;
+      }
+
+      $("<div title='Basic dialog'>Test message</div>").dialog();
+
+}

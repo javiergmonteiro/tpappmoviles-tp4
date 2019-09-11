@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TP app moviles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" type = "text/css" href="../css/categories.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="../js/jquery.js"></script>
+
+<style>
+
+#botones{
+    text-align: center;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit],[type=button],[type=reset] {
+  width: 100%;
+  background-color: rgb(252, 113, 0);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(248, 182, 128);
+}
+input[type=button]:hover {
+  background-color: rgb(248, 182, 128);
+}
+input[type=reset]:hover {
+  background-color: rgb(248, 182, 128);
+}
+
+
+#formdiv {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 60px;
+  margin-top: 60px;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+  <a href="../index.html">
+  <img src="../img/1200px-Xiaomi_logo.svg.png"/>
+  </a>  
+  <div><b>Xiaomi</b></div>
+</header>
+<div id="formdiv">
+    <form name="myForm">
+        <label for="fname">Nombre/s</label>
+        <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+      
+        <label for="lname">Apellido/s</label>
+        <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+
+        <label for="bdate">Fecha de nacimiento</label>
+        <input type="date" id="bdate" name="birthdate" placeholder="Tu apellido..">
+
+        <label for="genero">Genero</label>
+        <select id="gen" name="genero">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+      
+        <label for="valoracion">Valoracion</label>
+        <select id="valoracion" name="valoracion">
+          <option value="Me encanto">Me encanto</option>
+          <option value="Buena">Buena</option>
+          <option value="Podria ser mejor">Podria ser mejor</option>
+          <option value="Mala">Mala</option>
+          <option value="Lamentable">Lamentable</option>
+        </select>
+
+        <div id="botones">
+        <input type="button" value="Submit" onclick="submitForm()">
+        <input type="reset" value="Reestablecer valores">
+        <input type="button" value="Cancelar" onclick="cancelForm()">
+        </div>
+
+        <div id = "dialog1" title="Alerta">
+          <p id = "mensaje">Mensaje de prueba</p>
+        </div>
+    </form>
+</div>
