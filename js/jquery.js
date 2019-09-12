@@ -4,6 +4,7 @@ function submitForm(){
     var f_nacimiento = $("#bdate").val();
     var genero = $("#gen").val();
     var valoracion = $("#valoracion").val();
+    var form = $("#myForm")
 
     if (nombre == "") {
         $("<div title='Alerta'>El campo Nombre no puede estar vacio</div>").dialog({
@@ -34,6 +35,9 @@ function submitForm(){
       }
 
       $("<div title='Exito!'>Gracias por realizar la encuesta</div>").dialog();
+        
+      
+      
 
 }
 /*
