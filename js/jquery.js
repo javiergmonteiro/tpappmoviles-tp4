@@ -33,10 +33,10 @@ function submitForm(){
           return false;
       }
 
-      $("<div title='Basic dialog'>Test message</div>").dialog();
+      $("<div title='Exito!'>Gracias por realizar la encuesta</div>").dialog();
 
 }
-
+/*
 $(function(){
   $( "#dialog1").dialog({
     autoOpen: false,
@@ -45,5 +45,5 @@ $(function(){
     $("#dialog1").dialog("open");
   });
 });
-
+*/
 
