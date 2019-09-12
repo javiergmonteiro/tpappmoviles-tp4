@@ -6,7 +6,10 @@ function submitForm(){
     var valoracion = $("#valoracion").val();
 
     if (nombre == "") {
-        $("<div title='Alerta'>El campo Nombre no puede estar vacio</div>").dialog();
+        $("<div title='Alerta'>El campo Nombre no puede estar vacio</div>").dialog({
+          height: 200,
+          width: 200,
+        });
         return false;
       }
       if (!(/^[a-zA-Z]+$/.test(nombre))){
@@ -33,3 +36,14 @@ function submitForm(){
       $("<div title='Basic dialog'>Test message</div>").dialog();
 
 }
+
+$(function(){
+  $( "#dialog1").dialog({
+    autoOpen: false,
+  });
+  $( "#submit").click(function(){
+    $("#dialog1").dialog("open");
+  });
+});
+
+
