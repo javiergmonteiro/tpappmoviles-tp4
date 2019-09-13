@@ -34,11 +34,19 @@ function submitForm(){
           return false;
       }
 
-      $("<div title='Exito!'>Gracias por realizar la encuesta</div>").dialog();
-        
-      
-      
-
+      $("<div title='Exito!'>Gracias por realizar la encuesta</div>").dialog({
+        width: 400,
+        height: 160,
+        modal: true,
+        dialogClass: 'my-dialog',
+        open: function(){
+          //form.submit();
+          var foo = $(this);
+          setTimeout(function(){
+            foo.dialog('close');
+          }, 5000);
+        }
+      });
 }
 /*
 $(function(){
