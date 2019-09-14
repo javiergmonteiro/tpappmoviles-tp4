@@ -70,3 +70,4 @@ function myfunction(img){
     }
     document.getElementById("total").innerHTML = "Total: " + valor;
 }
+

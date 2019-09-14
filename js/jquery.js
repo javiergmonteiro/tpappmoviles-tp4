@@ -8,8 +8,8 @@ function submitForm(){
 
     if (nombre == "") {
         $("<div title='Alerta'>El campo Nombre no puede estar vacio</div>").dialog({
-          height: 200,
-          width: 200,
+          height: 160,
+          width: 400,
         });
         return false;
       }
@@ -34,7 +34,7 @@ function submitForm(){
           return false;
       }
 
-      $("<div title='Exito!'>Gracias por realizar la encuesta</div>").dialog({
+      $("<div id=exito title='Exito!'><b>Gracias por realizar la encuesta</b></div>").dialog({
         width: 400,
         height: 160,
         modal: true,
@@ -48,6 +48,30 @@ function submitForm(){
         }
       });
 }
+
+function cancelForm(){
+  if (confirm("¿Desea salir de la pagina de encuesta?")){
+      document.location.href="../index.html";
+  }
+}
+
+function animate_message(){
+  $("#mano>img").animate({
+    height: '30px',
+    width: '30px'
+  });
+  $("#mano>img").animate({
+    height: '45px',
+    width: '45px'
+  });
+}
+
+$(document).ready(function(){
+  var interval = self.setInterval(function(){animate_message()},1000);
+});
+
+
+
 /*
 $(function(){
   $( "#dialog1").dialog({

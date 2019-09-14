@@ -97,6 +97,26 @@ footer {
     z-index: 2;
 }
 
+#mensaje{
+  position: fixed;
+  margin-top: 90px;
+  margin-left: 620px;
+  z-index: 2;
+}
+
+#mensaje>div{
+  display: inline-block;
+}
+
+#mano>img{
+  height: 40px;
+  width: 40px;
+}
+
+#mensaje-mano>p{
+  color: rgb(252, 113, 0);
+}
+
 @media screen and (max-width: 600px){
 
   header>img{
