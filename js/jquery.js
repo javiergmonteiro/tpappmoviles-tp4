@@ -65,21 +65,9 @@ function animate_message(){
     width: '45px'
   });
 }
-
 $(document).ready(function(){
   var interval = self.setInterval(function(){animate_message()},1000);
 });
 
 
-
-/*
-$(function(){
-  $( "#dialog1").dialog({
-    autoOpen: false,
-  });
-  $( "#submit").click(function(){
-    $("#dialog1").dialog("open");
-  });
-});
-*/
 

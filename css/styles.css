@@ -98,6 +98,7 @@ footer {
 }
 
 #mensaje{
+  text-align: center;
   position: fixed;
   margin-top: 90px;
   margin-left: 620px;

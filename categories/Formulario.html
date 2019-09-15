@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>TP app moviles</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" type = "text/css" href="../css/categories.css" />
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src = "../js/jquery-categories.js" type="text/javascript"></script>
+
+<style>
+
+#botones{
+    text-align: center;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 100%;
+  background-color: rgb(252, 113, 0);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(248, 182, 128);
+}
+
+#formdiv {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 60px;
+  margin-top: 60px;
+  padding-bottom: auto;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+  <a href="../index.html">
+  <img src="../img/1200px-Xiaomi_logo.svg.png"/>
+  </a>  
+  <div><b>Xiaomi</b></div>
+</header>
+
+<div id="peticiones">
+    <div id="formdiv">
+        <input class="button" id="submitbtn" type="button" value="HTTP GET Async" onclick="HTTPGetAsync()">
+        <form id="myForm" name="encuesta">
+
+            <label for="fname">Nombre/s</label>
+            <input type="text" id="fname" name="firstname" placeholder="Tu nombre..">
+              
+            <label for="lname">Apellido/s</label>
+            <input type="text" id="lname" name="lastname" placeholder="Tu apellido..">
+
+            <label for="lname">DNI</label>
+            <input type="text" id="dni" name="dni" placeholder="Tu DNI..">
+                
+        </form>
+
+        <input class="button" type="reset" value="Enviar datos HTTP Get Async" onclick="HTTPGetAsyncForm()">
+        <input class="button" type="button" value="Cancelar" onclick="cancelForm()">
+    </div>
+
+    
+    
+</div>
