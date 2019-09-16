@@ -24,38 +24,61 @@ async function HTTPGetAsync(){
     }
 };
 
-async function HTTPGetAsyncForm(){
-    let result;
-    const datos = {
-        nombre: $("#fname"),
-        apellido: $("#lname"),
-        dni: $("#dni")
-    }
-    const formulario = Object.create(datos);
-    
-    try {
-        result = await $.ajax({
-            url: 'http://localhost:3000/test_form',
-            type: 'GET',
-            timeout: 5000,
-            data: formulario,
-            
-            error: function(XMLHttpRequest, textStatus, errorThrown){
-                if (textStatus=="timeout"){
-                    alert("ha ocurrido un timeout");
-                }
-                else{
-                    alert("ha ocurrido un error con la petición al servidor");
-                }
-            }
-    });
-    return alert(result.response);
+function HTTPGetAsyncForm(){
 
-    } catch (error){
-        console.error(error);
+    var form = {
+        nombre : $("#fname").val(),
+        apellido: $("#lname").val(),
+        dni: $("#dni").val()
     };
+
+    $.ajax({
+        type: 'GET',
+        async: true,
+        data: JSON.stringify(form),
+        dataType: 'json',
+        //url: 'http://localhost:3000/test_form?parameters='+JSON.stringify(form)
+        url: 'http://localhost:3000/test_form'
+    })
+    .done(function(data,textStatus, jqXHR){
+         if (console && console.log){
+             alert(data.response);
+             console.log(data.response);
+         }
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+        if (console && console.log){
+            alert("solicitud fallida "+ textStatus);
+        }
+    })
 };
 
+function HTTPPostAsyncForm(){
+
+    var form = {
+        nombre : String($("#fname").val()),
+        apellido: String($("#lname").val()),
+        dni: String($("#dni").val())
+    };
+    
+    $.ajax({
+        type: 'POST',
+        async: true,
+        data: form,
+        url: 'http://localhost:3000/test_form'
+    })
+    .done(function(data,textStatus, jqXHR){
+         if (console && console.log){
+             alert(data.response);
+             console.log(data.response);
+         }
+    })
+    .fail(function(jqXHR, textStatus, errorThrown){
+        if (console && console.log){
+            alert("solicitud fallida "+ textStatus);
+        }
+    })
+};
 
 
 $(document).ready(function(){

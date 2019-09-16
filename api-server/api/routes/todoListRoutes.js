@@ -11,5 +11,6 @@ module.exports = function(app) {
         .get(todoList.get_test_message);
 
     app.route('/test_form')
-        .get(todoList.get_test_form);
+        .get(todoList.get_test_form)
+        .post(todoList.post_test_form);
 };

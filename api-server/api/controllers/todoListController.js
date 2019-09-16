@@ -21,6 +21,16 @@ exports.get_test_message = function(req, res){
 }
 
 exports.get_test_form = function(req, res){
-    data = req.body;
-    res.json({response: "The form has been recieved successfuly!"});
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    var data = req.body;
+    console.log(data);
+    res.json({response: "The form has been recieved successfuly! Thank you"});
+}
+
+exports.post_test_form = function(req, res){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    var data = req.body;
+    res.json({response: "The form has been recieved successfuly! Thank you "+data.nombre+"!"});
 }
